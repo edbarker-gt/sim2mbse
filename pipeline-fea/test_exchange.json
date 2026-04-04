@@ -1,0 +1,67 @@
+{
+  "simulationIdentity": {
+    "name": "test",
+    "identifier": "SIM_test",
+    "description": "Baseline Nastran simulation/exchange representation generated from decimated extraction JSON.",
+    "sourceFileName": "test.bdf",
+    "sourceFileStem": "test"
+  },
+  "solver": {
+    "name": "NASTRAN",
+    "version": "unknown",
+    "sol": 101
+  },
+  "files": {
+    "inputDecks": [
+      {
+        "path": "test.bdf",
+        "role": "primary_input_deck"
+      }
+    ],
+    "outputFiles": []
+  },
+  "executiveControl": {
+    "sol": 101,
+    "cendPresent": true,
+    "otherCards": []
+  },
+  "caseControl": {
+    "subcases": [
+      {
+        "id": 1,
+        "label": "SUBCASE_1",
+        "analysisType": "LinearStatic",
+        "spc": "2",
+        "load": "2",
+        "outputRequests": []
+      }
+    ]
+  },
+  "bulkData": {
+    "nodes": {
+      "count": 22
+    },
+    "elements": {
+      "countsByType": {
+        "CQUAD4": 10
+      }
+    },
+    "materials": [],
+    "properties": []
+  },
+  "results": {
+    "resultSets": []
+  },
+  "provenance": {
+    "sourceFiles": [
+      "test.bdf"
+    ],
+    "sourceFileName": "test.bdf",
+    "sourceFileStem": "test",
+    "tool": {
+      "name": "nastran_exchange_layer_baseline.py",
+      "version": "1.1"
+    },
+    "timestamp": "2026-04-03T21:32:37+00:00"
+  }
+}

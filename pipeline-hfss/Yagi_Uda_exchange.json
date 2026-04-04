@@ -1,0 +1,50 @@
+{
+  "simulationIdentity": {
+    "name": "Yagi_Uda",
+    "identifier": "SIM_Yagi_Uda",
+    "description": "Baseline HFSS exchange representation generated from decimated AEDT JSON.",
+    "sourceFileName": "Yagi_Uda.hfss",
+    "sourceFileStem": "Yagi_Uda",
+    "projectFormat": "hfss",
+    "created": "Tue Mar 21 15:28:38 2023"
+  },
+  "solver": {
+    "name": "HFSS",
+    "family": "Electromagnetics",
+    "product": "HFSS",
+    "designCount": 0
+  },
+  "files": {
+    "inputProjects": [
+      {
+        "path": "Yagi_Uda.hfss",
+        "role": "primary_input_project"
+      }
+    ],
+    "outputFiles": []
+  },
+  "designs": [],
+  "materials": [
+    {
+      "name": "aluminum"
+    },
+    {
+      "name": "vacuum"
+    }
+  ],
+  "results": {
+    "resultSets": []
+  },
+  "provenance": {
+    "sourceFiles": [
+      "Yagi_Uda.hfss"
+    ],
+    "sourceFileName": "Yagi_Uda.hfss",
+    "sourceFileStem": "Yagi_Uda",
+    "tool": {
+      "name": "hfss_exchange_create.py",
+      "version": "1.0"
+    },
+    "timestamp": "2026-04-04T02:42:28+00:00"
+  }
+}

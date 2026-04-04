@@ -1,0 +1,330 @@
+rulebook:
+  name: "llm_codegen_rulebook_nastran_to_sysml"
+  version: "2.0"
+  purpose: >
+    Deterministic, contract-driven generation of Python scripts for a
+    Nastran -> decimated JSON -> exchange JSON -> SysML v2 pipeline.
+
+  global_principles:
+    deterministic: true
+    schema_disciplined: true
+    preserve_traceability: true
+    no_hallucination: true
+    no_stage_collapsing: true
+    architecture_style: "compiler_pipeline"
+    intermediate_representation_required: true
+
+  source_language:
+    name: "NASTRAN"
+    type: "finite_element_solver_input_deck"
+    authority:
+      primary:
+        - "MSC Nastran Quick Reference Guide"
+        - "NASA Nastran User Guide"
+      secondary:
+        - "NX Nastran documentation"
+    parsing_requirements:
+      must_follow_specification: true
+      must_not_infer_syntax: true
+    structure:
+      major_sections:
+        - name: "executive_control"
+          terminator: "CEND"
+        - name: "case_control"
+          terminator: "BEGIN BULK"
+        - name: "bulk_data"
+          terminator: "ENDDATA"
+    syntax_rules:
+      field_formats:
+        - "fixed_field_8_character"
+        - "free_field_comma_separated"
+      continuation_rules:
+        indicators:
+          - "+"
+          - "*"
+        behavior: "append continuation line fields to previous logical record"
+      comments:
+        prefix: "$"
+        behavior: "ignore content after $"
+    semantic_rules:
+      executive_control:
+        SOL:
+          description: "solution sequence identifier"
+          example: "SOL 101"
+          mapping: "executiveControl.sol"
+        CEND:
+          description: "end of executive control section"
+          mapping: "executiveControl.cendPresent"
+      case_control:
+        SUBCASE:
+          description: "defines analysis case"
+          mapping: "caseControl.subcases[].id"
+        SPC:
+          mapping: "caseControl.subcases[].spc"
+        LOAD:
+          mapping: "caseControl.subcases[].load"
+        DLOAD:
+          mapping: "caseControl.subcases[].load"
+      bulk_data:
+        GRID:
+          description: "node definition"
+          mapping: "nodeCount increment only"
+        elements:
+          examples:
+            - "CQUAD4"
+            - "CTRIA3"
+            - "CBAR"
+          mapping: "elementCountsByType"
+        materials:
+          MAT1:
+            mapping:
+              mid: "materials[].mid"
+              type: "materials[].type"
+    must_not:
+      - "must not reinterpret Nastran syntax outside specification"
+      - "must not assume field positions without considering format type"
+      - "must not mix free-field and fixed-field parsing incorrectly"
+      - "must not treat comments as data"
+
+  pipeline:
+    stages:
+      - id: "stage_1"
+        name: "decimator"
+        role: "raw_artifact_to_extracted_json"
+      - id: "stage_2"
+        name: "exchange_creator"
+        role: "extracted_json_to_exchange_json"
+      - id: "stage_3a"
+        name: "sysml_nonflattened"
+        role: "exchange_json_to_sysml_nonflattened"
+      - id: "stage_3b"
+        name: "sysml_flattened"
+        role: "exchange_json_to_sysml_flattened"
+
+  filename_propagation:
+    required: true
+    capture_at_entry: true
+    fields:
+      source_file_name: true
+      source_file_stem: true
+    propagate_through:
+      - "decimated_json.fileSummary"
+      - "exchange_json.simulationIdentity"
+      - "exchange_json.provenance"
+      - "sysml_output.top_level_part_name"
+    naming_rules:
+      decimated_json: "<source_bdf_stem>_decimated.json"
+      exchange_json: "<source_bdf_stem>_exchange.json"
+      sysml_nonflattened: "<source_bdf_stem>_model.sysml"
+      sysml_flattened: "<source_bdf_stem>_presentation.sysml"
+
+  stage_rules:
+    decimator:
+      input_contract:
+        accepted_extensions: [".bdf", ".dat"]
+        expected_content:
+          - "executive_control"
+          - "case_control"
+          - "bulk_data"
+      output_contract:
+        top_level_keys:
+          - "executiveControl"
+          - "caseControl"
+          - "bulkDataSummary"
+          - "fileSummary"
+      preserve_rules:
+        executive_control:
+          - "SOL -> executiveControl.sol"
+          - "CEND -> executiveControl.cendPresent"
+          - "non-modeled executive cards -> executiveControl.otherCards"
+        case_control:
+          - "SUBCASE id"
+          - "SPC reference"
+          - "LOAD reference"
+          - "DLOAD reference"
+          - "analysisType inferred from SOL when possible"
+        bulk_data_summary:
+          - "nodeCount"
+          - "elementCountsByType"
+          - "materials.mid"
+          - "materials.type"
+        file_summary:
+          - "inputFiles"
+          - "outputFiles"
+          - "sourceFileName"
+          - "sourceFileStem"
+      drop_rules:
+        - "full GRID table contents"
+        - "element connectivity"
+        - "coordinate/orientation numerics"
+        - "raw continuation-heavy formatting"
+        - "raw bulk-data deck text"
+      must_not:
+        - "must not reconstruct mesh"
+        - "must not infer missing materials"
+        - "must not invent loads or constraints"
+        - "must not place SOL in otherCards when parsed into sol"
+        - "must not add top-level keys outside output contract"
+      parsing_rules:
+        line_splitting_priority:
+          - "comma_separated_free_field"
+          - "whitespace_executive_case_lines"
+          - "fixed_width_8_char_fields"
+        required_case_examples:
+          - input: "SOL 101"
+            expected:
+              executiveControl:
+                sol: 101
+                otherCards_excludes: ["SOL", "SOL 101"]
+          - input: "SUBCASE 1"
+            expected:
+              caseControl_subcase_id: 1
+
+    exchange_creator:
+      input_contract:
+        required_top_level_keys:
+          - "executiveControl"
+          - "caseControl"
+          - "bulkDataSummary"
+          - "fileSummary"
+      output_contract:
+        top_level_keys:
+          - "simulationIdentity"
+          - "solver"
+          - "files"
+          - "executiveControl"
+          - "caseControl"
+          - "bulkData"
+          - "results"
+          - "provenance"
+      normalize_rules:
+        simulation_identity:
+          required_fields:
+            - "name"
+            - "identifier"
+            - "description"
+            - "sourceFileName"
+            - "sourceFileStem"
+        solver:
+          defaults:
+            name: "NASTRAN"
+            version: "unknown"
+          preserve:
+            - "sol"
+        files:
+          map_rules:
+            inputDecks: "fileSummary.inputFiles -> files.inputDecks[].path"
+            outputFiles: "fileSummary.outputFiles -> files.outputFiles[].path"
+        bulk_data:
+          map_rules:
+            "bulkDataSummary.nodeCount -> bulkData.nodes.count": true
+            "bulkDataSummary.elementCountsByType -> bulkData.elements.countsByType": true
+            "bulkDataSummary.materials -> bulkData.materials": true
+          defaults:
+            properties: []
+        results:
+          defaults:
+            resultSets: []
+        provenance:
+          required_fields:
+            - "sourceFiles"
+            - "sourceFileName"
+            - "sourceFileStem"
+            - "timestamp"
+            - "tool.name"
+            - "tool.version"
+      must_not:
+        - "must not invent missing data"
+        - "must not embed presentation formatting"
+        - "must not discard filename provenance"
+        - "must not merge unrelated fields"
+
+    sysml_nonflattened:
+      input_contract:
+        required_top_level_keys:
+          - "simulationIdentity"
+          - "solver"
+          - "files"
+          - "executiveControl"
+          - "caseControl"
+          - "bulkData"
+          - "results"
+          - "provenance"
+      output_contract:
+        file_type: ".sysml"
+        package_count_exactly: 1
+      structure_rules:
+        include_part_defs: true
+        include_typed_parts: true
+        separate_definitions_and_instances: true
+      formatting_rules:
+        flatten_source_files_to_string: true
+        flatten_element_counts_to_string: true
+        flattened_examples:
+          sourceFiles: "test.bdf"
+          elementCountsByType: "CQUAD4=10"
+      must_not:
+        - "must not emit escaped JSON strings for visible values"
+        - "must not create duplicate package declarations"
+        - "must not alter data semantics"
+        - "must not use flattened presentation structure"
+
+    sysml_flattened:
+      input_contract:
+        required_top_level_keys:
+          - "simulationIdentity"
+          - "solver"
+          - "files"
+          - "executiveControl"
+          - "caseControl"
+          - "bulkData"
+          - "results"
+          - "provenance"
+      output_contract:
+        file_type: ".sysml"
+        package_count_exactly: 1
+      structure_rules:
+        include_part_defs: false
+        visible_single_block_per_object: true
+        top_level_part_name_from_original_source_stem: true
+      formatting_rules:
+        flatten_source_files_to_string: true
+        flatten_element_counts_to_string: true
+        human_readable_values: true
+      must_not:
+        - "must not emit escaped JSON strings"
+        - "must not derive top-level part name from presentation suffix"
+        - "must not lose source filename stem"
+
+  validation:
+    required_checks:
+      - id: "check_sol_parsing"
+        description: "SOL 101 must populate executiveControl.sol"
+      - id: "check_sol_not_in_other_cards"
+        description: "SOL must not appear in otherCards when parsed"
+      - id: "check_filename_propagation"
+        description: "original filename and stem preserved across all stages"
+      - id: "check_exchange_provenance"
+        description: "exchange JSON contains sourceFiles and timestamp"
+      - id: "check_single_package"
+        description: "SysML output contains exactly one package declaration"
+      - id: "check_no_escaped_json_strings"
+        description: "SysML visible values must not contain escaped JSON serialization"
+      - id: "check_flattened_top_level_name"
+        description: "flattened SysML top-level part uses original source stem"
+
+  llm_generation_protocol:
+    required_steps:
+      - "read the stage role"
+      - "read input contract"
+      - "read output contract"
+      - "apply preserve rules"
+      - "apply drop rules"
+      - "apply must_not rules"
+      - "generate Python code"
+      - "self-check against validation list"
+    output_requirements:
+      - "single Python file"
+      - "clear functions for parse/transform/emit"
+      - "default output naming respected"
+      - "no unused extra top-level fields"

@@ -1,0 +1,81 @@
+$ NASTRAN input file created by the Patran 2010.2.3 64-Bit (MD Enabled)
+$ input file translator on March     20, 2011 at 14:11:20.
+$ Direct Text Input for Nastran System Cell Section
+$ Direct Text Input for File Management Section
+$ Direct Text Input for Executive Control
+$ Linear Static Analysis, Database
+SOL 101
+CEND
+$ Direct Text Input for Global Case Control Data
+TITLE = MD Nastran job created on 20-Mar-11 at 12:28:00
+SUBTITLE = Created by Lance Proctor, EagleSim
+LABEL = SESET Static Solution
+ECHO = NONE
+SUBCASE 1
+   SUBTITLE=Default
+   SPC = 2
+   LOAD = 2
+   DISPLACEMENT(SORT1,REAL)=ALL
+   SPCFORCES(SORT1,REAL)=ALL
+   STRESS(SORT1,REAL,VONMISES,BILIN)=ALL
+$ Direct Text Input for this Subcase
+BEGIN BULK
+$ Direct Text Input for Bulk Data
+PARAM    POST    0
+PARAM   PRTMAXIM YES
+$ Elements and Element Properties for region : pshell.1
+PSHELL   1       1      .1       1      1.              .833333
+$ Pset: "pshell.1" will be imported as: "pshell.1"
+CQUAD4   1       1       101     102     202     201     0.      0.
+CQUAD4   2       1       102     103     203     202     0.      0.
+CQUAD4   3       1       103     104     204     203     0.      0.
+$ Elements and Element Properties for region : pshell.2
+PSHELL   2       1      .1       1      1.              .833333
+$ Pset: "pshell.2" will be imported as: "pshell.2"
+CQUAD4   4       2       104     105     205     204     0.      0.
+CQUAD4   5       2       105     106     206     205     0.      0.
+CQUAD4   6       2       106     107     207     206     0.      0.
+$ Elements and Element Properties for region : pshell.3
+PSHELL   3       1      .1       1      1.              .833333
+$ Pset: "pshell.3" will be imported as: "pshell.3"
+CQUAD4   7       3       107     108     208     207     0.      0.
+CQUAD4   8       3       108     109     209     208     0.      0.
+CQUAD4   9       3       109     110     210     209     0.      0.
+CQUAD4   10      3       110     111     211     210     0.      0.
+$ Referenced Material Records
+$ Material Record : mat1.1
+$ Description of Material :
+MAT1*    1              1.+7            3.84615+6       .3
+*       2.588-4         1.-6
+$ Nodes of the Entire Model
+GRID     101             0.      0.      0.
+GRID     102            1.       0.      0.
+GRID     103            2.       0.      0.
+GRID     104            3.       0.      0.
+GRID     105            4.       0.      0.
+GRID     106            5.       0.      0.
+GRID     107            6.       0.      0.
+GRID     108            7.       0.      0.
+GRID     109            8.       0.      0.
+GRID     110            9.       0.      0.
+GRID     111            10.      0.      0.
+GRID     201             0.     1.       0.
+GRID     202            1.      1.       0.
+GRID     203            2.      1.       0.
+GRID     204            3.      1.       0.
+GRID     205            4.      1.       0.
+GRID     206            5.      1.       0.
+GRID     207            6.      1.       0.
+GRID     208            7.      1.       0.
+GRID     209            8.      1.       0.
+GRID     210            9.      1.       0.
+GRID     211            10.     1.       0.
+$ Loads for Load Case : Default
+SPCADD   2       1
+LOAD     2      1.      1.       1
+$ Displacement Constraints of Load Set : grid.ps
+SPC1     1       123456  101     201
+$ Nodal Forces of Load Set : force-at-111
+FORCE    1       111     0      50.     .8      .6       0.
+$ Referenced Coordinate Frames
+ENDDATA 516d30a2

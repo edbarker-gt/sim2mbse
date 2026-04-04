@@ -1,0 +1,50 @@
+{
+  "simulationIdentity": {
+    "name": "Radar-Array-Antenna",
+    "identifier": "SIM_Radar-Array-Antenna",
+    "description": "Baseline HFSS exchange representation generated from decimated AEDT JSON.",
+    "sourceFileName": "Radar-Array-Antenna.hfss",
+    "sourceFileStem": "Radar-Array-Antenna",
+    "projectFormat": "hfss",
+    "created": "Fri Mar 24 14:27:18 2023"
+  },
+  "solver": {
+    "name": "HFSS",
+    "family": "Electromagnetics",
+    "product": "HFSS",
+    "designCount": 0
+  },
+  "files": {
+    "inputProjects": [
+      {
+        "path": "Radar-Array-Antenna.hfss",
+        "role": "primary_input_project"
+      }
+    ],
+    "outputFiles": []
+  },
+  "designs": [],
+  "materials": [
+    {
+      "name": "copper"
+    },
+    {
+      "name": "vacuum"
+    }
+  ],
+  "results": {
+    "resultSets": []
+  },
+  "provenance": {
+    "sourceFiles": [
+      "Radar-Array-Antenna.hfss"
+    ],
+    "sourceFileName": "Radar-Array-Antenna.hfss",
+    "sourceFileStem": "Radar-Array-Antenna",
+    "tool": {
+      "name": "hfss_exchange_create.py",
+      "version": "1.0"
+    },
+    "timestamp": "2026-04-04T02:45:14+00:00"
+  }
+}

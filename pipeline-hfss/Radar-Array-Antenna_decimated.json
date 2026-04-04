@@ -1,0 +1,32 @@
+{
+  "projectIdentity": {
+    "sourceFileName": "Radar-Array-Antenna.hfss",
+    "sourceFileStem": "Radar-Array-Antenna",
+    "projectFormat": "hfss",
+    "created": "Fri Mar 24 14:27:18 2023",
+    "product": "HFSS"
+  },
+  "solverContext": {
+    "solverName": "HFSS",
+    "product": "HFSS",
+    "designCount": 0
+  },
+  "designSummary": {
+    "designNames": [],
+    "designs": []
+  },
+  "materialSummary": {
+    "sourceMode": "aedt_attribute_references",
+    "count": 2,
+    "names": [
+      "copper",
+      "vacuum"
+    ]
+  },
+  "fileSummary": {
+    "inputFiles": [
+      "Radar-Array-Antenna.hfss"
+    ],
+    "outputFiles": []
+  }
+}

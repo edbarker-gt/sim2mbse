@@ -1,0 +1,91 @@
+{
+  "simulationIdentity": {
+    "name": "simple-example",
+    "identifier": "SIM_simple-example",
+    "description": "Baseline Nastran simulation/exchange representation generated from decimated extraction JSON.",
+    "sourceFileName": "simple-example.bdf",
+    "sourceFileStem": "simple-example"
+  },
+  "solver": {
+    "name": "NASTRAN",
+    "version": "unknown",
+    "sol": null
+  },
+  "files": {
+    "inputDecks": [
+      {
+        "path": "simple-example.bdf",
+        "role": "primary_input_deck"
+      }
+    ],
+    "outputFiles": []
+  },
+  "executiveControl": {
+    "sol": null,
+    "cendPresent": true,
+    "otherCards": []
+  },
+  "caseControl": {
+    "subcases": [
+      {
+        "id": 1,
+        "label": "SUBCASE_1",
+        "analysisType": null,
+        "spc": null,
+        "load": "1",
+        "outputRequests": []
+      },
+      {
+        "id": 2,
+        "label": "SUBCASE_2",
+        "analysisType": null,
+        "spc": null,
+        "load": "2",
+        "outputRequests": []
+      },
+      {
+        "id": 3,
+        "label": "SUBCASE_3",
+        "analysisType": null,
+        "spc": null,
+        "load": "3",
+        "outputRequests": []
+      }
+    ]
+  },
+  "bulkData": {
+    "nodes": {
+      "count": 20
+    },
+    "elements": {
+      "countsByType": {
+        "CBAR": 10,
+        "CBEAM": 2,
+        "CBUSH": 1,
+        "CQUAD4": 4
+      }
+    },
+    "materials": [
+      {
+        "mid": 1,
+        "type": "MAT1"
+      }
+    ],
+    "properties": []
+  },
+  "results": {
+    "resultSets": []
+  },
+  "provenance": {
+    "sourceFiles": [
+      "simple-example.bdf"
+    ],
+    "sourceFileName": "simple-example.bdf",
+    "sourceFileStem": "simple-example",
+    "tool": {
+      "name": "nastran_exchange_layer_baseline.py",
+      "version": "1.1"
+    },
+    "timestamp": "2026-04-03T21:32:37+00:00"
+  }
+}

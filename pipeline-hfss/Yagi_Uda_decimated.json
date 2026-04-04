@@ -1,0 +1,32 @@
+{
+  "projectIdentity": {
+    "sourceFileName": "Yagi_Uda.hfss",
+    "sourceFileStem": "Yagi_Uda",
+    "projectFormat": "hfss",
+    "created": "Tue Mar 21 15:28:38 2023",
+    "product": "HFSS"
+  },
+  "solverContext": {
+    "solverName": "HFSS",
+    "product": "HFSS",
+    "designCount": 0
+  },
+  "designSummary": {
+    "designNames": [],
+    "designs": []
+  },
+  "materialSummary": {
+    "sourceMode": "aedt_attribute_references",
+    "count": 2,
+    "names": [
+      "aluminum",
+      "vacuum"
+    ]
+  },
+  "fileSummary": {
+    "inputFiles": [
+      "Yagi_Uda.hfss"
+    ],
+    "outputFiles": []
+  }
+}

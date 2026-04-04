@@ -1,0 +1,52 @@
+{
+  "executiveControl": {
+    "sol": null,
+    "cendPresent": true,
+    "otherCards": []
+  },
+  "caseControl": {
+    "subcases": [
+      {
+        "id": 1,
+        "analysisType": null,
+        "spc": null,
+        "load": "1"
+      },
+      {
+        "id": 2,
+        "analysisType": null,
+        "spc": null,
+        "load": "2"
+      },
+      {
+        "id": 3,
+        "analysisType": null,
+        "spc": null,
+        "load": "3"
+      }
+    ]
+  },
+  "bulkDataSummary": {
+    "nodeCount": 20,
+    "elementCountsByType": {
+      "CBAR": 10,
+      "CBEAM": 2,
+      "CBUSH": 1,
+      "CQUAD4": 4
+    },
+    "materials": [
+      {
+        "mid": 1,
+        "type": "MAT1"
+      }
+    ]
+  },
+  "fileSummary": {
+    "inputFiles": [
+      "simple-example.bdf"
+    ],
+    "outputFiles": [],
+    "sourceFileName": "simple-example.bdf",
+    "sourceFileStem": "simple-example"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "projectIdentity": {
+    "sourceFileName": "dipole2ghz.aedt",
+    "sourceFileStem": "dipole2ghz",
+    "projectFormat": "aedt",
+    "created": "Wed Apr 12 22:22:10 2023",
+    "product": "ElectronicsDesktopStudent"
+  },
+  "solverContext": {
+    "solverName": "HFSS",
+    "product": "ElectronicsDesktopStudent",
+    "designCount": 0
+  },
+  "designSummary": {
+    "designNames": [],
+    "designs": []
+  },
+  "materialSummary": {
+    "sourceMode": "aedt_attribute_references",
+    "count": 3,
+    "names": [
+      "air",
+      "copper",
+      "vacuum"
+    ]
+  },
+  "fileSummary": {
+    "inputFiles": [
+      "dipole2ghz.aedt"
+    ],
+    "outputFiles": []
+  }
+}

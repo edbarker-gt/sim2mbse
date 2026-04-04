@@ -1,0 +1,53 @@
+{
+  "simulationIdentity": {
+    "name": "dipole2ghz",
+    "identifier": "SIM_dipole2ghz",
+    "description": "Baseline HFSS exchange representation generated from decimated AEDT JSON.",
+    "sourceFileName": "dipole2ghz.aedt",
+    "sourceFileStem": "dipole2ghz",
+    "projectFormat": "aedt",
+    "created": "Wed Apr 12 22:22:10 2023"
+  },
+  "solver": {
+    "name": "HFSS",
+    "family": "Electromagnetics",
+    "product": "ElectronicsDesktopStudent",
+    "designCount": 0
+  },
+  "files": {
+    "inputProjects": [
+      {
+        "path": "dipole2ghz.aedt",
+        "role": "primary_input_project"
+      }
+    ],
+    "outputFiles": []
+  },
+  "designs": [],
+  "materials": [
+    {
+      "name": "air"
+    },
+    {
+      "name": "copper"
+    },
+    {
+      "name": "vacuum"
+    }
+  ],
+  "results": {
+    "resultSets": []
+  },
+  "provenance": {
+    "sourceFiles": [
+      "dipole2ghz.aedt"
+    ],
+    "sourceFileName": "dipole2ghz.aedt",
+    "sourceFileStem": "dipole2ghz",
+    "tool": {
+      "name": "hfss_exchange_create.py",
+      "version": "1.0"
+    },
+    "timestamp": "2026-04-04T02:42:28+00:00"
+  }
+}
