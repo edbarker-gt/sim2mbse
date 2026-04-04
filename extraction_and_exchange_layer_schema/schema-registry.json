@@ -1,0 +1,56 @@
+{
+  "$id": "https://example.org/schemas/schema-registry.json",
+  "title": "ESMS Schema Registry",
+  "type": "object",
+  "schemas": {
+    "metadata": {
+      "id": "https://example.org/schemas/es-model-metadata-structural.json",
+      "role": "metadata",
+      "domain": "agnostic"
+    },
+    "simulation": {
+      "nastran": {
+        "id": "https://example.org/schemas/es-simulation-data-extraction-schema-nastran.json",
+        "role": "simulation",
+        "domain": "structural"
+      },
+      "cfd": {
+        "id": "https://example.org/schemas/es-simulation-data-extraction-schema-cfd.json",
+        "role": "simulation",
+        "domain": "cfd"
+      },
+      "em": {
+        "id": "https://example.org/schemas/es-simulation-data-extraction-schema-electromagnetics-hfss-cst-feko.json",
+        "role": "simulation",
+        "domain": "em"
+      },
+      "thermal": {
+        "id": "https://example.org/schemas/es-simulation-data-extraction-schema-thermal-steadyState-transient.json",
+        "role": "simulation",
+        "domain": "thermal"
+      }
+    },
+    "extractor": {
+      "nastran": {
+        "id": "https://example.org/schemas/nastran-extraction.json",
+        "role": "extractor",
+        "domain": "structural"
+      },
+      "cfd": {
+        "id": "https://example.org/schemas/cfd-extraction.json",
+        "role": "extractor",
+        "domain": "cfd"
+      },
+      "em": {
+        "id": "https://example.org/schemas/em-extraction.json",
+        "role": "extractor",
+        "domain": "em"
+      },
+      "thermal": {
+        "id": "https://example.org/schemas/thermal-extraction.json",
+        "role": "extractor",
+        "domain": "thermal"
+      }
+    }
+  }
+}

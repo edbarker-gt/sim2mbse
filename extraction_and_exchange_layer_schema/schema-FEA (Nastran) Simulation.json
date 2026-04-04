@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/esms-simulation-nastran.json",
+  "title": "ESMS Simulation Model Definition - NASTRAN",
+  "type": "object",
+
+  "required": [
+    "simulationIdentity",
+    "solver",
+    "files",
+    "executiveControl",
+    "caseControl",
+    "bulkData",
+    "results",
+    "provenance"
+  ],
+
+  "properties": {
+
+    "simulationIdentity": {
+      "type": "object",
+      "required": ["name", "identifier"],
+      "properties": {
+        "name": { "type": "string" },
+        "identifier": { "type": "string" },
+        "description": { "type": "string" }
+      }
+    },
+
+    "solver": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string", "enum": ["NASTRAN", "MSC NASTRAN", "NX NASTRAN"] },
+        "version": { "type": "string" },
+        "sol": { "type": "integer" }
+      }
+    },
+
+    "files": {
+      "type": "object",
+      "required": ["inputDecks"],
+      "properties": {
+        "inputDecks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path"],
+            "properties": {
+              "path": { "type": "string" },
+              "role": { "type": "string" }
+            }
+          }
+        },
+        "outputFiles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path", "type"],
+            "properties": {
+              "path": { "type": "string" },
+              "type": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "executiveControl": {
+      "type": "object",
+      "required": ["sol"],
+      "properties": {
+        "sol": { "type": "integer" },
+        "cendPresent": { "type": "boolean" },
+        "otherCards": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "caseControl": {
+      "type": "object",
+      "properties": {
+        "subcases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+              "id": { "type": "integer" },
+              "label": { "type": "string" },
+              "analysisType": { "type": "string" },
+              "spc": { "type": "string" },
+              "load": { "type": "string" },
+              "outputRequests": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "bulkData": {
+      "type": "object",
+      "properties": {
+        "nodes": {
+          "type": "object",
+          "properties": {
+            "count": { "type": "integer" }
+          }
+        },
+        "elements": {
+          "type": "object",
+          "properties": {
+            "countsByType": {
+              "type": "object",
+              "additionalProperties": { "type": "integer" }
+            }
+          }
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["mid", "type"],
+            "properties": {
+              "mid": { "type": "integer" },
+              "type": { "type": "string" }
+            }
+          }
+        },
+        "properties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["pid", "type"],
+            "properties": {
+              "pid": { "type": "integer" },
+              "type": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "results": {
+      "type": "object",
+      "properties": {
+        "resultSets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "type"],
+            "properties": {
+              "id": { "type": "string" },
+              "type": { "type": "string" },
+              "data": { "type": "object" }
+            }
+          }
+        }
+      }
+    },
+
+    "provenance": {
+      "type": "object",
+      "required": ["sourceFiles", "timestamp"],
+      "properties": {
+        "sourceFiles": { "type": "array", "items": { "type": "string" } },
+        "tool": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "version": { "type": "string" }
+          }
+        },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}
+
+

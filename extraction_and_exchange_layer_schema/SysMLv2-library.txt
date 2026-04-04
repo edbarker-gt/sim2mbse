@@ -1,0 +1,130 @@
+package ESMS_Library {
+
+  package Metadata {
+    part def ESModelMetadata {
+      attribute modelIdentityAndFocus;
+      attribute modelScopeOfContent;
+      attribute modelRepresentation;
+      attribute modelUtility;
+      attribute modelAssessment;
+      attribute modelLifecycleManagement;
+    }
+  }
+
+  package Structural_Nastran {
+    part def NastranSimulation {
+      attribute simulationIdentity;
+      attribute solver;
+      attribute files;
+      attribute executiveControl;
+      attribute caseControl;
+      attribute bulkData;
+      attribute results;
+      attribute provenance;
+    }
+
+    part def NastranExtraction {
+      attribute executiveControl;
+      attribute caseControl;
+      attribute bulkDataSummary;
+      attribute fileSummary;
+    }
+  }
+
+  package CFD {
+    part def CFDSimulation {
+      attribute simulationIdentity;
+      attribute solver;
+      attribute mesh;
+      attribute boundaryConditions;
+      attribute flowModel;
+      attribute results;
+      attribute provenance;
+    }
+
+    part def CFDExtraction {
+      attribute solverInfo;
+      attribute meshSummary;
+      attribute materialSummary;
+      attribute boundaryConditionSummary;
+      attribute initialConditionSummary;
+      attribute flowModelSummary;
+      attribute fileSummary;
+    }
+  }
+
+  package Electromagnetics {
+    part def EMSimulation {
+      attribute simulationIdentity;
+      attribute solver;
+      attribute geometry;
+      attribute mesh;
+      attribute materials;
+      attribute ports;
+      attribute boundaryConditions;
+      attribute solverSettings;
+      attribute results;
+      attribute provenance;
+    }
+
+    part def EMExtraction {
+      attribute solverInfo;
+      attribute geometrySummary;
+      attribute meshSummary;
+      attribute materialSummary;
+      attribute portSummary;
+      attribute boundaryConditionSummary;
+      attribute frequencySetup;
+      attribute fileSummary;
+    }
+  }
+
+  package Thermal {
+    part def ThermalSimulation {
+      attribute simulationIdentity;
+      attribute solver;
+      attribute geometry;
+      attribute mesh;
+      attribute materials;
+      attribute boundaryConditions;
+      attribute loads;
+      attribute solverSettings;
+      attribute results;
+      attribute provenance;
+    }
+
+    part def ThermalExtraction {
+      attribute solverInfo;
+      attribute geometrySummary;
+      attribute meshSummary;
+      attribute materialSummary;
+      attribute boundaryConditionSummary;
+      attribute loadSummary;
+      attribute solverSettings;
+      attribute fileSummary;
+    }
+  }
+
+  package Combined {
+    part def ESMSModel {
+      part metadata : Metadata::ESModelMetadata;
+      part simulation;
+    }
+
+    specialization NastranModel specializes ESMSModel {
+      part simulation : Structural_Nastran::NastranSimulation;
+    }
+
+    specialization CFDModel specializes ESMSModel {
+      part simulation : CFD::CFDSimulation;
+    }
+
+    specialization EMModel specializes ESMSModel {
+      part simulation : Electromagnetics::EMSimulation;
+    }
+
+    specialization ThermalModel specializes ESMSModel {
+      part simulation : Thermal::ThermalSimulation;
+    }
+  }
+}

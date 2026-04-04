@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/esms-simulation-cfd.json",
+  "title": "ESMS Simulation Model Definition - CFD",
+  "type": "object",
+
+  "required": [
+    "simulationIdentity",
+    "solver",
+    "mesh",
+    "boundaryConditions",
+    "flowModel",
+    "results",
+    "provenance"
+  ],
+
+  "properties": {
+
+    "simulationIdentity": {
+      "type": "object",
+      "required": ["name", "identifier"],
+      "properties": {
+        "name": { "type": "string" },
+        "identifier": { "type": "string" }
+      }
+    },
+
+    "solver": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "turbulenceModel": { "type": "string" }
+      }
+    },
+
+    "mesh": {
+      "type": "object",
+      "properties": {
+        "cellCount": { "type": "integer" },
+        "faceCount": { "type": "integer" }
+      }
+    },
+
+    "boundaryConditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string" },
+          "value": { "type": "object" }
+        }
+      }
+    },
+
+    "flowModel": {
+      "type": "object",
+      "properties": {
+        "compressible": { "type": "boolean" },
+        "viscous": { "type": "boolean" },
+        "turbulenceModel": { "type": "string" }
+      }
+    },
+
+    "results": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "location": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "sourceFiles": { "type": "array", "items": { "type": "string" } },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}
+
+

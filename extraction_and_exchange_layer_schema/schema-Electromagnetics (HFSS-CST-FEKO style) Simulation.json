@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/esms-simulation-electromagnetics.json",
+  "title": "ESMS Simulation Model Definition - Electromagnetics",
+  "type": "object",
+
+  "required": [
+    "simulationIdentity",
+    "solver",
+    "geometry",
+    "mesh",
+    "materials",
+    "ports",
+    "boundaryConditions",
+    "solverSettings",
+    "results",
+    "provenance"
+  ],
+
+  "properties": {
+
+    "simulationIdentity": {
+      "type": "object",
+      "required": ["name", "identifier"],
+      "properties": {
+        "name": { "type": "string" },
+        "identifier": { "type": "string" },
+        "description": { "type": "string" }
+      }
+    },
+
+    "solver": {
+      "type": "object",
+      "required": ["name", "version", "method"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "method": {
+          "type": "string",
+          "enum": ["FEM", "FDTD", "MoM", "FIT", "Hybrid", "Other"]
+        }
+      }
+    },
+
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "entities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "type"],
+            "properties": {
+              "id": { "type": "string" },
+              "type": {
+                "type": "string",
+                "enum": ["solid", "sheet", "curve", "point", "other"]
+              },
+              "material": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "mesh": {
+      "type": "object",
+      "properties": {
+        "cellCount": { "type": "integer" },
+        "minCellSize": { "type": "number" },
+        "maxCellSize": { "type": "number" }
+      }
+    },
+
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["dielectric", "magnetic", "conductor", "lossy", "other"]
+          },
+          "properties": {
+            "type": "object",
+            "properties": {
+              "epsilonR": { "type": "number" },
+              "muR": { "type": "number" },
+              "conductivity": { "type": "number" },
+              "lossTangent": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+
+    "ports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["waveport", "lumped", "gap", "terminal", "other"]
+          },
+          "location": { "type": "string" },
+          "impedance": { "type": "number" }
+        }
+      }
+    },
+
+    "boundaryConditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["PEC", "PMC", "radiation", "PML", "symmetry", "other"]
+          },
+          "appliesTo": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "solverSettings": {
+      "type": "object",
+      "properties": {
+        "frequencyRange": {
+          "type": "object",
+          "properties": {
+            "startHz": { "type": "number" },
+            "stopHz": { "type": "number" },
+            "points": { "type": "integer" }
+          }
+        },
+        "convergenceCriteria": {
+          "type": "object",
+          "properties": {
+            "deltaS": { "type": "number" },
+            "maxPasses": { "type": "integer" }
+          }
+        }
+      }
+    },
+
+    "results": {
+      "type": "object",
+      "properties": {
+        "sParameters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "frequencyHz": { "type": "number" },
+              "matrix": { "type": "object" }
+            }
+          }
+        },
+        "fieldPlots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string" },
+              "location": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "provenance": {
+      "type": "object",
+      "required": ["sourceFiles", "timestamp"],
+      "properties": {
+        "sourceFiles": { "type": "array", "items": { "type": "string" } },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/es-model-metadata-structural.json",
+  "title": "ASSESS ES Model Metadata (Structural Schema)",
+  "type": "object",
+
+  "properties": {
+    "ModelIdentityAndFocus": { "$ref": "#/definitions/Section" },
+    "ModelScopeOfContent": { "$ref": "#/definitions/Section" },
+    "ModelRepresentation": { "$ref": "#/definitions/Section" },
+    "ModelUtility": { "$ref": "#/definitions/Section" },
+    "ModelAssessment": { "$ref": "#/definitions/Section" },
+    "ModelLifecycleManagement": { "$ref": "#/definitions/Section" }
+  },
+
+  "required": [
+    "ModelIdentityAndFocus",
+    "ModelScopeOfContent",
+    "ModelRepresentation",
+    "ModelUtility",
+    "ModelAssessment",
+    "ModelLifecycleManagement"
+  ],
+
+  "definitions": {
+    "Section": {
+      "type": "object",
+      "properties": {
+        "Features": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Feature" }
+        }
+      },
+      "required": ["Features"]
+    },
+
+    "Feature": {
+      "type": "object",
+      "properties": {
+        "FeatureName": { "type": "string" },
+        "FeatureAttributes": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/FeatureAttribute" }
+        }
+      },
+      "required": ["FeatureName", "FeatureAttributes"]
+    },
+
+    "FeatureAttribute": {
+      "type": "object",
+      "properties": {
+        "FeatureAttributeName": { "type": "string" },
+        "Instances": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Instance" }
+        }
+      },
+      "required": ["FeatureAttributeName", "Instances"]
+    },
+
+    "Instance": {
+      "type": "object",
+      "properties": {
+        "InstanceName": { "type": "string" },
+        "AccessControl": { "type": "string" },
+        "Identifier": { "type": "string" },
+        "Description": { "type": "string" },
+        "DefiningActivity": { "type": "string" },
+        "InstanceAttributes": {
+          "type": "object",
+          "additionalProperties": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "array" },
+              { "type": "object" }
+            ]
+          }
+        }
+      },
+      "required": [
+        "InstanceName",
+        "AccessControl",
+        "Identifier",
+        "Description",
+        "DefiningActivity",
+        "InstanceAttributes"
+      ]
+    }
+  }
+}

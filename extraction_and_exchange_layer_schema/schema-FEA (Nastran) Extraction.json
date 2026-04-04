@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/nastran-extraction.json",
+  "title": "Nastran Extraction Schema",
+  "type": "object",
+
+  "required": [
+    "executiveControl",
+    "caseControl",
+    "bulkDataSummary",
+    "fileSummary"
+  ],
+
+  "properties": {
+
+    "executiveControl": {
+      "type": "object",
+      "properties": {
+        "sol": { "type": "integer" },
+        "cendPresent": { "type": "boolean" },
+        "otherCards": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "caseControl": {
+      "type": "object",
+      "properties": {
+        "subcases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "integer" },
+              "analysisType": { "type": "string" },
+              "spc": { "type": "string" },
+              "load": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "bulkDataSummary": {
+      "type": "object",
+      "properties": {
+        "nodeCount": { "type": "integer" },
+        "elementCountsByType": {
+          "type": "object",
+          "additionalProperties": { "type": "integer" }
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "mid": { "type": "integer" },
+              "type": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "fileSummary": {
+      "type": "object",
+      "properties": {
+        "inputFiles": { "type": "array", "items": { "type": "string" } },
+        "outputFiles": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
+
+ 

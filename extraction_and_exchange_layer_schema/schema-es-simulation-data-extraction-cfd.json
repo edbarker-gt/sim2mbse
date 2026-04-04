@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/cfd-extraction.json",
+  "title": "CFD Extraction Schema",
+  "type": "object",
+
+  "required": [
+    "solverInfo",
+    "meshSummary",
+    "materialSummary",
+    "boundaryConditionSummary",
+    "initialConditionSummary",
+    "flowModelSummary",
+    "fileSummary"
+  ],
+
+  "properties": {
+
+    "solverInfo": {
+      "type": "object",
+      "properties": {
+        "solverName": { "type": "string" },
+        "solverVersion": { "type": "string" },
+        "solverType": {
+          "type": "string",
+          "enum": ["RANS", "LES", "DNS", "URANS", "Hybrid", "Other"]
+        }
+      }
+    },
+
+    "meshSummary": {
+      "type": "object",
+      "properties": {
+        "cellCount": { "type": "integer" },
+        "faceCount": { "type": "integer" },
+        "boundaryPatches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "type": { "type": "string" },
+              "faceCount": { "type": "integer" }
+            }
+          }
+        }
+      }
+    },
+
+    "materialSummary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "density": { "type": "number" },
+          "viscosity": { "type": "number" },
+          "thermalConductivity": { "type": "number" },
+          "specificHeat": { "type": "number" }
+        }
+      }
+    },
+
+    "boundaryConditionSummary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "patchName": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": [
+              "velocityInlet",
+              "pressureOutlet",
+              "wall",
+              "symmetry",
+              "periodic",
+              "freestream",
+              "other"
+            ]
+          },
+          "values": {
+            "type": "object",
+            "additionalProperties": { "type": "number" }
+          }
+        }
+      }
+    },
+
+    "initialConditionSummary": {
+      "type": "object",
+      "properties": {
+        "velocity": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "pressure": { "type": "number" },
+        "temperature": { "type": "number" }
+      }
+    },
+
+    "flowModelSummary": {
+      "type": "object",
+      "properties": {
+        "compressible": { "type": "boolean" },
+        "turbulenceModel": {
+          "type": "string",
+          "enum": [
+            "kEpsilon",
+            "kOmega",
+            "kOmegaSST",
+            "SpalartAllmaras",
+            "LES",
+            "DNS",
+            "Other"
+          ]
+        },
+        "radiationModel": { "type": "string" },
+        "multiphaseModel": { "type": "string" }
+      }
+    },
+
+    "fileSummary": {
+      "type": "object",
+      "properties": {
+        "inputFiles": { "type": "array", "items": { "type": "string" } },
+        "outputFiles": { "type": "array", "items": { "type": "string" } },
+        "logFiles": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

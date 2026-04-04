@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/thermal-extraction.json",
+  "title": "Thermal Simulation Extraction Schema",
+  "type": "object",
+
+  "required": [
+    "solverInfo",
+    "geometrySummary",
+    "meshSummary",
+    "materialSummary",
+    "boundaryConditionSummary",
+    "loadSummary",
+    "solverSettings",
+    "fileSummary"
+  ],
+
+  "properties": {
+
+    "solverInfo": {
+      "type": "object",
+      "properties": {
+        "solverName": { "type": "string" },
+        "solverVersion": { "type": "string" },
+        "analysisType": { "type": "string" }
+      }
+    },
+
+    "geometrySummary": {
+      "type": "object",
+      "properties": {
+        "entityCount": { "type": "integer" },
+        "entityTypes": {
+          "type": "object",
+          "additionalProperties": { "type": "integer" }
+        }
+      }
+    },
+
+    "meshSummary": {
+      "type": "object",
+      "properties": {
+        "nodeCount": { "type": "integer" },
+        "elementCount": { "type": "integer" }
+      }
+    },
+
+    "materialSummary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "thermalConductivity": { "type": "number" },
+          "specificHeat": { "type": "number" },
+          "density": { "type": "number" }
+        }
+      }
+    },
+
+    "boundaryConditionSummary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string" },
+          "value": { "type": "number" },
+          "appliesTo": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "loadSummary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string" },
+          "magnitude": { "type": "number" },
+          "appliesTo": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "solverSettings": {
+      "type": "object",
+      "properties": {
+        "timeStep": { "type": "number" },
+        "totalTime": { "type": "number" },
+        "convergenceTolerance": { "type": "number" }
+      }
+    },
+
+    "fileSummary": {
+      "type": "object",
+      "properties": {
+        "inputFiles": { "type": "array", "items": { "type": "string" } },
+        "outputFiles": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
+
+

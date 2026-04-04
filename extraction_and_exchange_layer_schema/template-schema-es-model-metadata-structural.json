@@ -1,0 +1,971 @@
+{
+  "ModelIdentityAndFocus": {
+    "Features": [
+      {
+        "FeatureName": "Model Identity",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "ES Model Identity",
+            "Instances": [
+              {
+                "InstanceName": "Base Instance",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {}
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Purpose",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "ES Model Purpose",
+            "Instances": [
+              {
+                "InstanceName": "Base Instance",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "PurposeType": []
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Modeled System of Interest",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "System of Interest",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {}
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Modeled Environmental Domains",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Modeled Domains",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "Type": "",
+                  "Classification": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Modeled Scenario",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Modeled Scenarios",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "ModelObjectives": []
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "ModelScopeOfContent": {
+    "Features": [
+      {
+        "FeatureName": "Modeled Stakeholder Value",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Stakeholder Values of Interest",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "StakeholderGroupsImpacted": [],
+                  "CoupledExternalInteractions": "",
+                  "CoupledInternalInteractions": "",
+                  "CoupledQuantitiesOfInterest": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Modeled System External Behavior",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "External Interactions",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "InputOutputExchange": "",
+                  "ExternalInterface": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Modeled System Internal Behavior",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Internal Interactions",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "QuantitiesOfInterest": "",
+                  "Relationships": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Attributes",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Model Components & Relationships",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "ArchitecturalRelationship": "",
+                  "OtherRelationships": "",
+                  "CorrelationToSystemComponents": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Conceptual Model Behavior Couplings",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "I/O Couplings",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "Inputs": "",
+                  "Outputs": ""
+                }
+              }
+            ]
+          },
+          {
+            "FeatureAttributeName": "Decomposition Couplings",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "BehaviorCouplings": "",
+                  "OtherCouplings": ""
+                }
+              }
+            ]
+          },
+          {
+            "FeatureAttributeName": "Characterization Couplings",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "FunctionalIdentityType": "",
+                  "ObjectiveBehavior": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Managed Model Datasets",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Datasets",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "DatasetType": "",
+                  "OtherDatasetAttributes": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Failure Modes and Effects",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Identified Potential Failure Modes",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "FailureModeDescription": "",
+                  "FailureCause": "",
+                  "FailureEffect": "",
+                  "Likelihood": ""
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "ModelRepresentation": {
+    "Features": [
+      {
+        "FeatureName": "Model Form",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Model Form Type",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "ModelFormType": "",
+                  "ModelFormClassification": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Structure",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Model Structural Representation",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "StructuralRepresentationType": "",
+                  "StructuralRepresentationClassification": "",
+                  "StructuralAssumptions": "",
+                  "StructuralLimitations": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Mathematical Representation",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Mathematical Formulation",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "MathematicalRepresentationType": "",
+                  "MathematicalRepresentationClassification": "",
+                  "GoverningEquations": "",
+                  "ConstitutiveRelations": "",
+                  "BoundaryConditions": "",
+                  "InitialConditions": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Computational Representation",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Computational Implementation",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "ComputationalRepresentationType": "",
+                  "ComputationalRepresentationClassification": "",
+                  "NumericalMethods": "",
+                  "DiscretizationApproach": "",
+                  "SolutionAlgorithms": "",
+                  "ComputationalAssumptions": "",
+                  "ComputationalLimitations": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Data Representation",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Data Structures and Formats",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "DataStructureType": "",
+                  "DataFormatType": "",
+                  "DataSchema": "",
+                  "DataAssumptions": "",
+                  "DataLimitations": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Fidelity",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Fidelity Characterization",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "FidelityType": "",
+                  "FidelityLevel": "",
+                  "FidelityAssumptions": "",
+                  "FidelityLimitations": ""
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "ModelUtility": {
+    "Features": [
+      {
+        "FeatureName": "Model Usage",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Intended Use",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "IntendedUseType": "",
+                  "IntendedUseDescription": ""
+                }
+              }
+            ]
+          },
+          {
+            "FeatureAttributeName": "Actual Use",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "ActualUseType": "",
+                  "ActualUseDescription": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Value",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Value Characterization",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "ValueType": "",
+                  "ValueDescription": "",
+                  "ValueMetrics": []
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Performance",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Performance Metrics",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "PerformanceMetricType": "",
+                  "PerformanceMetricValue": "",
+                  "PerformanceMetricDescription": ""
+                }
+              }
+            ]
+          },
+          {
+            "FeatureAttributeName": "Computational Performance",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "RuntimeCharacteristics": "",
+                  "ComputationalResourceRequirements": "",
+                  "ScalabilityCharacteristics": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Usability",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Usability Characteristics",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "EaseOfUse": "",
+                  "UserExpertiseRequired": "",
+                  "DocumentationAvailability": "",
+                  "TrainingRequirements": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Interoperability",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Interoperability Characteristics",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "InteroperabilityType": "",
+                  "InteroperabilityStandards": [],
+                  "InteroperabilityLimitations": ""
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "ModelAssessment": {
+    "Features": [
+      {
+        "FeatureName": "Model Qualification Assessment",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Conceptual Model Assessment Characterization",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "AssessmentCriteria": [],
+                  "CriteriaCharacterizations": [],
+                  "ConceptualModelAssessmentCharacterizationSummary": ""
+                }
+              }
+            ]
+          },
+          {
+            "FeatureAttributeName": "Conceptual Model Application Envelope",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "ValidValueRange": "",
+                  "CurrentValue": "",
+                  "ValidityStatus": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Code Verification Assessment",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Code Assumptions & Limitations",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {}
+              }
+            ]
+          },
+          {
+            "FeatureAttributeName": "Code Verification Assessment Characterization",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "AccessControlIdentifier": "",
+                  "DomainOfVerification": "",
+                  "ErrorThresholdsOrBounds": [],
+                  "ErrorEstimateCharacterizations": []
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Solution Verification Assessment",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Solution Description",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {}
+              }
+            ]
+          },
+          {
+            "FeatureAttributeName": "Solution Assumptions & Limitations",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {}
+              }
+            ]
+          },
+          {
+            "FeatureAttributeName": "Solution Verification Assessment Characterization",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "AccessControlIdentifier": "",
+                  "DomainOfVerification": "",
+                  "SolutionErrorThresholdsOrBounds": [],
+                  "CharacterizationOfSolutionErrorEstimates": [],
+                  "SolutionVerificationCharacterizationSummary": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Validation Assessment",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Model Validation Assessment Characterization",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "AccessControlIdentifier": "",
+                  "DomainOfValidation": "",
+                  "AssessmentCriteria": [],
+                  "CriteriaCharacterizations": [],
+                  "TargetModelValidationCharacterizationSummary": "",
+                  "ModelValidationCharacterizationSummary": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "UQ and Sensitivity Assessment",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "UQ and Sensitivity Assessment Characterization",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "AssessmentCriteria": [],
+                  "CriteriaCharacterizations": [],
+                  "TargetUQAndSensitivityCharacterizationSummary": "",
+                  "UQAndSensitivityCharacterizationSummary": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Appropriateness Assessment",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Model Appropriateness Assessment Characterization",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "AccessControlIdentifier": "",
+                  "AssessmentCriteria": [],
+                  "CriteriaCharacterizations": [],
+                  "TargetModelAppropriatenessCharacterizationSummary": [],
+                  "ModelAppropriatenessCharacterizationSummary": []
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Third-Party Acceptance",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Acceptance Status",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "AcceptanceCriteria": [],
+                  "AcceptanceStatusSummary": "",
+                  "ReportOrReferenceDocument": []
+                }
+              }
+            ]
+          },
+          {
+            "FeatureAttributeName": "Standards Compliance",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "StandardOwner": "",
+                  "ComplianceStatus": ""
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  "ModelLifecycleManagement": {
+    "Features": [
+      {
+        "FeatureName": "Model Development",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Development Activities",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "DevelopmentStage": "",
+                  "DevelopmentMethods": "",
+                  "DevelopmentTools": "",
+                  "DevelopmentAssumptions": "",
+                  "DevelopmentLimitations": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Deployment",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Deployment Activities",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "DeploymentEnvironment": "",
+                  "DeploymentPlatform": "",
+                  "DeploymentConfiguration": "",
+                  "DeploymentDependencies": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Maintenance",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Maintenance Activities",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "MaintenanceType": "",
+                  "MaintenanceSchedule": "",
+                  "MaintenanceTools": "",
+                  "MaintenanceAssumptions": "",
+                  "MaintenanceLimitations": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Versioning",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Version Information",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "VersionIdentifier": "",
+                  "VersionDescription": "",
+                  "VersionDate": "",
+                  "VersionChanges": []
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Archiving",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Archival Information",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "ArchiveLocation": "",
+                  "ArchiveFormat": "",
+                  "ArchiveDate": "",
+                  "ArchiveMetadata": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "FeatureName": "Model Retirement",
+        "FeatureAttributes": [
+          {
+            "FeatureAttributeName": "Retirement Information",
+            "Instances": [
+              {
+                "InstanceName": "",
+                "AccessControl": "",
+                "Identifier": "",
+                "Description": "",
+                "DefiningActivity": "",
+                "InstanceAttributes": {
+                  "RetirementReason": "",
+                  "RetirementDate": "",
+                  "RetirementDocumentation": ""
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

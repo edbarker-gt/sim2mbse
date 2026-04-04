@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/esms-simulation-thermal.json",
+  "title": "ESMS Simulation Model Definition - Thermal",
+  "type": "object",
+
+  "required": [
+    "simulationIdentity",
+    "solver",
+    "geometry",
+    "mesh",
+    "materials",
+    "boundaryConditions",
+    "loads",
+    "solverSettings",
+    "results",
+    "provenance"
+  ],
+
+  "properties": {
+
+    "simulationIdentity": {
+      "type": "object",
+      "required": ["name", "identifier"],
+      "properties": {
+        "name": { "type": "string" },
+        "identifier": { "type": "string" }
+      }
+    },
+
+    "solver": {
+      "type": "object",
+      "required": ["name", "version", "analysisType"],
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "analysisType": {
+          "type": "string",
+          "enum": ["steadyState", "transient"]
+        }
+      }
+    },
+
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "entities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "type"],
+            "properties": {
+              "id": { "type": "string" },
+              "type": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "mesh": {
+      "type": "object",
+      "properties": {
+        "nodeCount": { "type": "integer" },
+        "elementCount": { "type": "integer" }
+      }
+    },
+
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string" },
+          "thermalConductivity": { "type": "number" },
+          "specificHeat": { "type": "number" },
+          "density": { "type": "number" }
+        }
+      }
+    },
+
+    "boundaryConditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["temperature", "convection", "radiation", "other"]
+          },
+          "value": { "type": "number" },
+          "appliesTo": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "loads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["heatFlux", "volumetricHeat", "other"]
+          },
+          "magnitude": { "type": "number" },
+          "appliesTo": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "solverSettings": {
+      "type": "object",
+      "properties": {
+        "timeStep": { "type": "number" },
+        "totalTime": { "type": "number" },
+        "convergenceTolerance": { "type": "number" }
+      }
+    },
+
+    "results": {
+      "type": "object",
+      "properties": {
+        "temperatureField": { "type": "object" },
+        "heatFluxField": { "type": "object" }
+      }
+    },
+
+    "provenance": {
+      "type": "object",
+      "required": ["sourceFiles", "timestamp"],
+      "properties": {
+        "sourceFiles": { "type": "array", "items": { "type": "string" } },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/em-extraction.json",
+  "title": "Electromagnetics Extraction Schema",
+  "type": "object",
+
+  "required": [
+    "solverInfo",
+    "geometrySummary",
+    "meshSummary",
+    "materialSummary",
+    "portSummary",
+    "boundaryConditionSummary",
+    "frequencySetup",
+    "fileSummary"
+  ],
+
+  "properties": {
+
+    "solverInfo": {
+      "type": "object",
+      "properties": {
+        "solverName": { "type": "string" },
+        "solverVersion": { "type": "string" },
+        "method": { "type": "string" }
+      }
+    },
+
+    "geometrySummary": {
+      "type": "object",
+      "properties": {
+        "entityCount": { "type": "integer" },
+        "entityTypes": {
+          "type": "object",
+          "additionalProperties": { "type": "integer" }
+        }
+      }
+    },
+
+    "meshSummary": {
+      "type": "object",
+      "properties": {
+        "cellCount": { "type": "integer" },
+        "minCellSize": { "type": "number" },
+        "maxCellSize": { "type": "number" }
+      }
+    },
+
+    "materialSummary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "epsilonR": { "type": "number" },
+          "muR": { "type": "number" },
+          "conductivity": { "type": "number" }
+        }
+      }
+    },
+
+    "portSummary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string" },
+          "location": { "type": "string" },
+          "impedance": { "type": "number" }
+        }
+      }
+    },
+
+    "boundaryConditionSummary": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string" },
+          "appliesTo": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "frequencySetup": {
+      "type": "object",
+      "properties": {
+        "startHz": { "type": "number" },
+        "stopHz": { "type": "number" },
+        "points": { "type": "integer" }
+      }
+    },
+
+    "fileSummary": {
+      "type": "object",
+      "properties": {
+        "inputFiles": { "type": "array", "items": { "type": "string" } },
+        "outputFiles": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
