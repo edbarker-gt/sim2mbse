@@ -1,0 +1,28 @@
+
+may be less correct
+
+python nastran_decimator.py                         test.bdf
+python nastran_exchange_create.py                   test_decimated.json
+python nastran_exchange_to_sysml_nonflattened_updated.py    test_exchange.json
+python nastran_exchange_to_sysml_flattened_updated.py       test_exchange.json
+
+python nastran_decimator.py                         simple-example.bdf
+python nastran_exchange_create.py                   simple-example_decimated.json
+python nastran_exchange_to_sysml_nonflattened_updated.py    simple-example_exchange.json
+python nastran_exchange_to_sysml_flattened_updated.py       simple-example_exchange.json
+
+
+=========================================================================================================
+
+may be more correct
+
+ppython nastran_decimator.py                         test.bdf
+python nastran_exchange_create.py                   test_decimated.json
+python nastran_exchange_to_sysml_nonflattened.py    test_exchange.json
+python nastran_exchange_to_sysml_flattened.py       test_exchange.json
+
+python nastran_decimator.py                         simple-example.bdf
+python nastran_exchange_create.py                   simple-example_decimated.json
+python nastran_exchange_to_sysml_nonflattened.py    simple-example_exchange.json
+python nastran_exchange_to_sysml_flattened.py       simple-example_exchange.json
+

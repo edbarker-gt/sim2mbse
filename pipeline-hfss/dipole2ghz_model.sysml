@@ -1,39 +1,43 @@
 package dipole2ghz {
 
+  private import ScalarValues::*;
+  private import ISQ::*;
+  private import SI::*;
+
   doc /*
     Deterministic SysML v2-style model generated from
     Electromagnetics simulation JSON.
   */
 
   part def SolverContext {
-    attribute name : String;
-    attribute version : String;
-    attribute method : String;
-    attribute frequencyRange : String;
+    attribute name : ScalarValues::String;
+    attribute version : ScalarValues::String;
+    attribute method : ScalarValues::String;
+    attribute frequencyRange : ScalarValues::String;
   }
 
   part def MaterialSummary {
-    attribute id : String;
-    attribute type : String;
-    attribute properties : String;
+    attribute id : ScalarValues::String;
+    attribute type : ScalarValues::String;
+    attribute properties : ScalarValues::String;
   }
 
   part def PortSummary {
-    attribute id : String;
-    attribute type : String;
-    attribute location : String;
-    attribute impedance : String;
+    attribute id : ScalarValues::String;
+    attribute type : ScalarValues::String;
+    attribute location : ScalarValues::String;
+    attribute impedance : ScalarValues::String;
   }
 
   part def BoundarySummary {
-    attribute id : String;
-    attribute type : String;
-    attribute appliesTo : String;
+    attribute id : ScalarValues::String;
+    attribute type : ScalarValues::String;
+    attribute appliesTo : ScalarValues::String;
   }
 
   part def ProvenanceRecord {
-    attribute sourceFiles : String;
-    attribute timestamp : String;
+    attribute sourceFiles : ScalarValues::String;
+    attribute timestamp : ScalarValues::String;
   }
 
   part solverContext : SolverContext {

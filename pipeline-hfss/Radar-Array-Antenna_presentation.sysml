@@ -11,27 +11,27 @@ package Radar_Array_Antenna {
   part Radar_Array_Antenna {
 
     part solverContext {
-      attribute name : String = "HFSS";
-      attribute version : String = "HFSS";
-      attribute method : String = "FEM";
-      attribute frequencyRange : String = "";
+      attribute name : ScalarValues::String = "HFSS";
+      attribute version : ScalarValues::String = "HFSS";
+      attribute method : ScalarValues::String = "FEM";
+      attribute frequencyRange : ScalarValues::String = "";
     }
 
     part copper {
-      attribute id : String = "copper";
-      attribute type : String = "conductor";
-      attribute properties : String = "";
+      attribute id : ScalarValues::String = "copper";
+      attribute type : ScalarValues::String = "conductor";
+      attribute properties : ScalarValues::String = "";
     }
 
     part vacuum {
-      attribute id : String = "vacuum";
-      attribute type : String = "dielectric";
-      attribute properties : String = "";
+      attribute id : ScalarValues::String = "vacuum";
+      attribute type : ScalarValues::String = "dielectric";
+      attribute properties : ScalarValues::String = "";
     }
 
     part provenance {
-      attribute sourceFiles : String = "Radar-Array-Antenna.hfss";
-      attribute timestamp : String = "2026-04-05T14:08:19+00:00";
+      attribute sourceFiles : ScalarValues::String = "Radar-Array-Antenna.hfss";
+      attribute timestamp : ScalarValues::String = "2026-04-05T14:08:19+00:00";
     }
 
   }

@@ -1,42 +1,31 @@
 package Fender_Bassman_Amp_AA864 {
 
+  private import ScalarValues::*;
+
+  part def AudioIn {}
+  part def AudioOut {}
+  part def PowerIn {}
+  part def ControlIn {}
+  part def Ground {}
+  part def OtherPort {}
+
   part BassmanAmp {
 
-    port bassInput: AudioIn;
-    port normalInput: AudioIn;
-    port speakerOut: AudioOut;
-    port ht1: PowerIn;
-    port ht2: PowerIn;
-    port ht3: PowerIn;
-    port ht4: PowerIn;
-    port biasControl: ControlIn;
-    port gnd: Ground;
+    part bassInput : AudioIn;
+    part normalInput : AudioIn;
+    part speakerOut : AudioOut;
+    part ht1 : PowerIn;
+    part ht2 : PowerIn;
+    part ht3 : PowerIn;
+    part ht4 : PowerIn;
+    part biasControl : ControlIn;
+    part gnd : Ground;
 
-    attribute bass: Real;
-    attribute treble: Real;
-    attribute volume: Real;
-    attribute brightSwitch: Boolean;
-    attribute deepSwitch: Boolean;
+    attribute bass: ScalarValues::Real;
+    attribute treble: ScalarValues::Real;
+    attribute volume: ScalarValues::Real;
+    attribute brightSwitch: ScalarValues::Boolean;
+    attribute deepSwitch: ScalarValues::Boolean;
 
   }
-
-  interface AudioIn {
-    flow in signal: Real;
-  }
-
-  interface AudioOut {
-    flow out signal: Real;
-  }
-
-  interface PowerIn {
-    flow in voltage: Real;
-  }
-
-  interface ControlIn {
-    flow in control: Real;
-  }
-
-  interface Ground { }
-
-  interface OtherPort { }
 }

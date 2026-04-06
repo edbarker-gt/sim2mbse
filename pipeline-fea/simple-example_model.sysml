@@ -1,37 +1,39 @@
 package simple_example {
 
+  private import ScalarValues::*;
+
   doc /*
     Baseline deterministic SysML v2-style model generated from
     Nastran exchange JSON.
   */
 
   part def SolverContext {
-    attribute name : String;
-    attribute version : String;
-    attribute sol : Integer;
+    attribute name : ScalarValues::String;
+    attribute version : ScalarValues::String;
+    attribute sol : ScalarValues::Integer;
   }
 
   part def StructuralSummary {
-    attribute nodeCount : Integer;
-    attribute elementCountsByType : String;
+    attribute nodeCount : ScalarValues::Integer;
+    attribute elementCountsByType : ScalarValues::String;
   }
 
   part def MaterialSummary {
-    attribute mid : Integer;
-    attribute type : String;
+    attribute mid : ScalarValues::Integer;
+    attribute type : ScalarValues::String;
   }
 
   part def AnalysisCase {
-    attribute id : Integer;
-    attribute label : String;
-    attribute analysisType : String;
-    attribute spc : String;
-    attribute load : String;
+    attribute id : ScalarValues::Integer;
+    attribute label : ScalarValues::String;
+    attribute analysisType : ScalarValues::String;
+    attribute spc : ScalarValues::String;
+    attribute load : ScalarValues::String;
   }
 
   part def ProvenanceRecord {
-    attribute sourceFiles : String;
-    attribute timestamp : String;
+    attribute sourceFiles : ScalarValues::String;
+    attribute timestamp : ScalarValues::String;
   }
 
   part solverContext : SolverContext {

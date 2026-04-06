@@ -11,27 +11,27 @@ package Yagi_Uda {
   part Yagi_Uda {
 
     part solverContext {
-      attribute name : String = "HFSS";
-      attribute version : String = "HFSS";
-      attribute method : String = "FEM";
-      attribute frequencyRange : String = "";
+      attribute name : ScalarValues::String = "HFSS";
+      attribute version : ScalarValues::String = "HFSS";
+      attribute method : ScalarValues::String = "FEM";
+      attribute frequencyRange : ScalarValues::String = "";
     }
 
     part aluminum {
-      attribute id : String = "aluminum";
-      attribute type : String = "conductor";
-      attribute properties : String = "";
+      attribute id : ScalarValues::String = "aluminum";
+      attribute type : ScalarValues::String = "conductor";
+      attribute properties : ScalarValues::String = "";
     }
 
     part vacuum {
-      attribute id : String = "vacuum";
-      attribute type : String = "dielectric";
-      attribute properties : String = "";
+      attribute id : ScalarValues::String = "vacuum";
+      attribute type : ScalarValues::String = "dielectric";
+      attribute properties : ScalarValues::String = "";
     }
 
     part provenance {
-      attribute sourceFiles : String = "Yagi_Uda.hfss";
-      attribute timestamp : String = "2026-04-05T14:18:07+00:00";
+      attribute sourceFiles : ScalarValues::String = "Yagi_Uda.hfss";
+      attribute timestamp : ScalarValues::String = "2026-04-05T14:18:07+00:00";
     }
 
   }

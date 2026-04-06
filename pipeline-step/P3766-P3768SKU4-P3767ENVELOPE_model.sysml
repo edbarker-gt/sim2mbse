@@ -17,19 +17,19 @@ package P3766_P3768SKU4_P3767ENVELOPE {
 
   part BoardAssembly {
 
-    port usb32TypeC: Usb32TypeC;
-    port usb32TypeAStacked: Usb32TypeAStacked;
-    port gigabitEthernet: Rj45Ethernet;
-    port displayPort: DisplayPort;
-    port m2KeyE: M2KeyE;
-    port m2KeyM4Lane: M2KeyM4Lane;
-    port m2KeyM2Lane: M2KeyM2Lane;
-    port cameraConnector: CameraConnector;
-    port expansionHeader40Pin: ExpansionHeader40Pin;
-    port buttonHeader: ButtonHeader;
-    port canBusHeader: CanBusHeader;
-    port fanConnector: FanConnector;
-    port dcPowerJack: DcPowerJack;
+    part usb32TypeC : Usb32TypeC;
+    part usb32TypeAStacked : Usb32TypeAStacked;
+    part gigabitEthernet : Rj45Ethernet;
+    part displayPort : DisplayPort;
+    part m2KeyE : M2KeyE;
+    part m2KeyM4Lane : M2KeyM4Lane;
+    part m2KeyM2Lane : M2KeyM2Lane;
+    part cameraConnector : CameraConnector;
+    part expansionHeader40Pin : ExpansionHeader40Pin;
+    part buttonHeader : ButtonHeader;
+    part canBusHeader : CanBusHeader;
+    part fanConnector : FanConnector;
+    part dcPowerJack : DcPowerJack;
 
   }
 }
