@@ -1,28 +1,27 @@
 {
-  "projectIdentity": {
-    "sourceFileName": "Yagi_Uda.hfss",
-    "sourceFileStem": "Yagi_Uda",
-    "projectFormat": "hfss",
-    "created": "Tue Mar 21 15:28:38 2023",
-    "product": "HFSS"
-  },
-  "solverContext": {
+  "solverInfo": {
     "solverName": "HFSS",
-    "product": "HFSS",
-    "designCount": 0
+    "solverVersion": "HFSS",
+    "method": "FEM"
   },
-  "designSummary": {
-    "designNames": [],
-    "designs": []
+  "geometrySummary": {
+    "entityCount": 0,
+    "entityTypes": {}
   },
-  "materialSummary": {
-    "sourceMode": "aedt_attribute_references",
-    "count": 2,
-    "names": [
-      "aluminum",
-      "vacuum"
-    ]
-  },
+  "meshSummary": {},
+  "materialSummary": [
+    {
+      "name": "aluminum",
+      "type": "conductor"
+    },
+    {
+      "name": "vacuum",
+      "type": "dielectric"
+    }
+  ],
+  "portSummary": [],
+  "boundaryConditionSummary": [],
+  "frequencySetup": {},
   "fileSummary": {
     "inputFiles": [
       "Yagi_Uda.hfss"

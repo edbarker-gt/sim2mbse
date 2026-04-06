@@ -1,28 +1,27 @@
 {
-  "projectIdentity": {
-    "sourceFileName": "Radar-Array-Antenna.hfss",
-    "sourceFileStem": "Radar-Array-Antenna",
-    "projectFormat": "hfss",
-    "created": "Fri Mar 24 14:27:18 2023",
-    "product": "HFSS"
-  },
-  "solverContext": {
+  "solverInfo": {
     "solverName": "HFSS",
-    "product": "HFSS",
-    "designCount": 0
+    "solverVersion": "HFSS",
+    "method": "FEM"
   },
-  "designSummary": {
-    "designNames": [],
-    "designs": []
+  "geometrySummary": {
+    "entityCount": 0,
+    "entityTypes": {}
   },
-  "materialSummary": {
-    "sourceMode": "aedt_attribute_references",
-    "count": 2,
-    "names": [
-      "copper",
-      "vacuum"
-    ]
-  },
+  "meshSummary": {},
+  "materialSummary": [
+    {
+      "name": "copper",
+      "type": "conductor"
+    },
+    {
+      "name": "vacuum",
+      "type": "dielectric"
+    }
+  ],
+  "portSummary": [],
+  "boundaryConditionSummary": [],
+  "frequencySetup": {},
   "fileSummary": {
     "inputFiles": [
       "Radar-Array-Antenna.hfss"

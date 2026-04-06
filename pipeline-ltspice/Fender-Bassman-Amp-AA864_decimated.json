@@ -1,0 +1,115 @@
+{
+  "systemIdentity": {
+    "name": "Fender-Bassman-Amp-AA864",
+    "identifier": "SYS_Fender-Bassman-Amp-AA864",
+    "description": "Black-box interface and control extraction from LTspice / SPICE source.",
+    "sourceFileName": "Fender-Bassman-Amp-AA864.asc"
+  },
+  "ports": [
+    {
+      "id": "gnd",
+      "type": "Ground",
+      "sourceNet": "0",
+      "description": "Port derived from net '0'."
+    },
+    {
+      "id": "ht2",
+      "type": "PowerIn",
+      "sourceNet": "HT2",
+      "description": "Power rail derived from net 'HT2'."
+    },
+    {
+      "id": "ht1",
+      "type": "PowerIn",
+      "sourceNet": "HT1",
+      "description": "Power rail derived from net 'HT1'."
+    },
+    {
+      "id": "ht3",
+      "type": "PowerIn",
+      "sourceNet": "HT3",
+      "description": "Power rail derived from net 'HT3'."
+    },
+    {
+      "id": "ht4",
+      "type": "PowerIn",
+      "sourceNet": "HT4",
+      "description": "Power rail derived from net 'HT4'."
+    },
+    {
+      "id": "biasControl",
+      "type": "ControlIn",
+      "sourceNet": "BIAS",
+      "description": "Port derived from net 'BIAS'."
+    },
+    {
+      "id": "speakerOut",
+      "type": "AudioOut",
+      "sourceNet": "OUTPUT",
+      "description": "Port derived from net 'OUTPUT'."
+    },
+    {
+      "id": "bassInput",
+      "type": "AudioIn",
+      "sourceNet": "bass",
+      "description": "Inferred primary bass-channel input."
+    },
+    {
+      "id": "normalInput",
+      "type": "AudioIn",
+      "sourceNet": "normal",
+      "description": "Inferred primary normal-channel input."
+    }
+  ],
+  "attributes": [
+    {
+      "id": "bass",
+      "type": "Real",
+      "value": null,
+      "description": "Bass control inferred from Bassman amplifier archetype."
+    },
+    {
+      "id": "treble",
+      "type": "Real",
+      "value": null,
+      "description": "Treble control inferred from Bassman amplifier archetype."
+    },
+    {
+      "id": "volume",
+      "type": "Real",
+      "value": null,
+      "description": "Volume control inferred from Bassman amplifier archetype."
+    },
+    {
+      "id": "brightSwitch",
+      "type": "Boolean",
+      "value": null,
+      "description": "Bright switch inferred from Bassman amplifier archetype."
+    },
+    {
+      "id": "deepSwitch",
+      "type": "Boolean",
+      "value": null,
+      "description": "Deep switch inferred from Bassman amplifier archetype."
+    }
+  ],
+  "analysisContext": {
+    "analyses": [
+      ".ac oct 10 20 20k",
+      ".STEP LIN PARAM BASS 0.0  1.0 0.5",
+      ".STEP LIN PARAM TREB 0.0  1.0 0.5",
+      ".STEP LIN PARAM VOL 0.1  1.0 0.1",
+      ".STEP PARAM INPUT LIST 0  1",
+      ".STEP PARAM BASSNORM LIST 0  1",
+      ".STEP PARAM NORMINPUT LIST 0  1",
+      ".STEP PARAM DEEP LIST 0 1",
+      ".STEP PARAM BRIGHT LIST 0 1",
+      ".STEP LIN PARAM bias 0.1 0.9 0.2"
+    ]
+  },
+  "provenance": {
+    "sourceFiles": [
+      "Fender-Bassman-Amp-AA864.asc"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+
+python step_connector_ports_decimator.py                P3766-P3768SKU4-P3767ENVELOPE.stp
+python step_connector_ports_exchange_create.py          P3766-P3768SKU4-P3767ENVELOPE_decimated.json
+python step_connector_ports_to_sysml_nonflattened.py    P3766-P3768SKU4-P3767ENVELOPE_exchange.json
+python step_connector_ports_to_sysml_flattened.py       P3766-P3768SKU4-P3767ENVELOPE_exchange.json
+

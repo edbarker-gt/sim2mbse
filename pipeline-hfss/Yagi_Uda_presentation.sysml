@@ -5,31 +5,33 @@ package Yagi_Uda {
 
   doc /*
     Flattened presentation-mode SysML v2-style model generated from
-    HFSS exchange JSON.
+    Electromagnetics simulation JSON.
   */
 
   part Yagi_Uda {
 
     part solverContext {
       attribute name : String = "HFSS";
-      attribute family : String = "Electromagnetics";
-      attribute product : String = "HFSS";
-      attribute designCount : Integer = 0;
+      attribute version : String = "HFSS";
+      attribute method : String = "FEM";
+      attribute frequencyRange : String = "";
     }
 
     part aluminum {
-      attribute name : String = "aluminum";
+      attribute id : String = "aluminum";
+      attribute type : String = "conductor";
+      attribute properties : String = "";
     }
 
     part vacuum {
-      attribute name : String = "vacuum";
+      attribute id : String = "vacuum";
+      attribute type : String = "dielectric";
+      attribute properties : String = "";
     }
 
     part provenance {
       attribute sourceFiles : String = "Yagi_Uda.hfss";
-      attribute sourceFileName : String = "Yagi_Uda.hfss";
-      attribute sourceFileStem : String = "Yagi_Uda";
-      attribute timestamp : String = "2026-04-04T02:42:28+00:00";
+      attribute timestamp : String = "2026-04-05T14:18:07+00:00";
     }
 
   }

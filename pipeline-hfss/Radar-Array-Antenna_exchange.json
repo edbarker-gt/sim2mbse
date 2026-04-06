@@ -2,49 +2,43 @@
   "simulationIdentity": {
     "name": "Radar-Array-Antenna",
     "identifier": "SIM_Radar-Array-Antenna",
-    "description": "Baseline HFSS exchange representation generated from decimated AEDT JSON.",
-    "sourceFileName": "Radar-Array-Antenna.hfss",
-    "sourceFileStem": "Radar-Array-Antenna",
-    "projectFormat": "hfss",
-    "created": "Fri Mar 24 14:27:18 2023"
+    "description": "Electromagnetics simulation representation generated from HFSS extractor output."
   },
   "solver": {
     "name": "HFSS",
-    "family": "Electromagnetics",
-    "product": "HFSS",
-    "designCount": 0
+    "version": "HFSS",
+    "method": "FEM"
   },
-  "files": {
-    "inputProjects": [
-      {
-        "path": "Radar-Array-Antenna.hfss",
-        "role": "primary_input_project"
-      }
-    ],
-    "outputFiles": []
+  "geometry": {
+    "entities": []
   },
-  "designs": [],
+  "mesh": {},
   "materials": [
     {
-      "name": "copper"
+      "id": "copper",
+      "type": "conductor",
+      "properties": {}
     },
     {
-      "name": "vacuum"
+      "id": "vacuum",
+      "type": "dielectric",
+      "properties": {}
     }
   ],
+  "ports": [],
+  "boundaryConditions": [],
+  "solverSettings": {
+    "frequencyRange": {},
+    "convergenceCriteria": {}
+  },
   "results": {
-    "resultSets": []
+    "sParameters": [],
+    "fieldPlots": []
   },
   "provenance": {
     "sourceFiles": [
       "Radar-Array-Antenna.hfss"
     ],
-    "sourceFileName": "Radar-Array-Antenna.hfss",
-    "sourceFileStem": "Radar-Array-Antenna",
-    "tool": {
-      "name": "hfss_exchange_create.py",
-      "version": "1.0"
-    },
-    "timestamp": "2026-04-04T02:45:14+00:00"
+    "timestamp": "2026-04-05T14:08:19+00:00"
   }
 }

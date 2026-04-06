@@ -5,31 +5,33 @@ package Radar_Array_Antenna {
 
   doc /*
     Flattened presentation-mode SysML v2-style model generated from
-    HFSS exchange JSON.
+    Electromagnetics simulation JSON.
   */
 
   part Radar_Array_Antenna {
 
     part solverContext {
       attribute name : String = "HFSS";
-      attribute family : String = "Electromagnetics";
-      attribute product : String = "HFSS";
-      attribute designCount : Integer = 0;
+      attribute version : String = "HFSS";
+      attribute method : String = "FEM";
+      attribute frequencyRange : String = "";
     }
 
     part copper {
-      attribute name : String = "copper";
+      attribute id : String = "copper";
+      attribute type : String = "conductor";
+      attribute properties : String = "";
     }
 
     part vacuum {
-      attribute name : String = "vacuum";
+      attribute id : String = "vacuum";
+      attribute type : String = "dielectric";
+      attribute properties : String = "";
     }
 
     part provenance {
       attribute sourceFiles : String = "Radar-Array-Antenna.hfss";
-      attribute sourceFileName : String = "Radar-Array-Antenna.hfss";
-      attribute sourceFileStem : String = "Radar-Array-Antenna";
-      attribute timestamp : String = "2026-04-04T02:45:14+00:00";
+      attribute timestamp : String = "2026-04-05T14:08:19+00:00";
     }
 
   }

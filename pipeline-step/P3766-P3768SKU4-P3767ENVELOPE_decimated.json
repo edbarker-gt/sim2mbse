@@ -1,0 +1,150 @@
+{
+  "systemIdentity": {
+    "name": "P3766-P3768SKU4-P3767ENVELOPE",
+    "identifier": "SYS_P3766-P3768SKU4-P3767ENVELOPE",
+    "description": "Black-box connector-port extraction from STEP source.",
+    "sourceFileName": "P3766-P3768SKU4-P3767ENVELOPE.stp"
+  },
+  "ports": [
+    {
+      "id": "fanConnector",
+      "type": "FanConnector",
+      "standard": "Fan Connector",
+      "sourceName": "WIRE_FAN_P3518",
+      "description": "Fan Connector",
+      "evidence": [
+        "name_match:fan",
+        "source:WIRE_FAN_P3518"
+      ]
+    },
+    {
+      "id": "usb32TypeC",
+      "type": "Usb32TypeC",
+      "standard": "USB 3.2 Type C connector",
+      "sourceName": "default",
+      "description": "USB 3.2 Type C connector",
+      "evidence": [
+        "default_port_set"
+      ]
+    },
+    {
+      "id": "usb32TypeAStacked",
+      "type": "Usb32TypeAStacked",
+      "standard": "USB 3.2 stacked Type A connectors",
+      "sourceName": "default",
+      "description": "USB 3.2 stacked Type A connectors",
+      "evidence": [
+        "default_port_set"
+      ]
+    },
+    {
+      "id": "gigabitEthernet",
+      "type": "Rj45Ethernet",
+      "standard": "Gigabit Ethernet RJ45 connector",
+      "sourceName": "default",
+      "description": "Gigabit Ethernet RJ45 connector",
+      "evidence": [
+        "default_port_set"
+      ]
+    },
+    {
+      "id": "displayPort",
+      "type": "DisplayPort",
+      "standard": "DisplayPort connector",
+      "sourceName": "default",
+      "description": "DisplayPort connector",
+      "evidence": [
+        "default_port_set"
+      ]
+    },
+    {
+      "id": "m2KeyE",
+      "type": "M2KeyE",
+      "standard": "M.2 Key E socket",
+      "sourceName": "default",
+      "description": "M.2 Key E socket",
+      "evidence": [
+        "default_port_set"
+      ]
+    },
+    {
+      "id": "m2KeyM4Lane",
+      "type": "M2KeyM4Lane",
+      "standard": "M.2 Key M socket (4-lane PCIe)",
+      "sourceName": "default",
+      "description": "M.2 Key M socket (4-lane PCIe)",
+      "evidence": [
+        "default_port_set"
+      ]
+    },
+    {
+      "id": "m2KeyM2Lane",
+      "type": "M2KeyM2Lane",
+      "standard": "M.2 Key M socket (2-lane PCIe)",
+      "sourceName": "default",
+      "description": "M.2 Key M socket (2-lane PCIe)",
+      "evidence": [
+        "default_port_set"
+      ]
+    },
+    {
+      "id": "cameraConnector",
+      "type": "CameraConnector",
+      "standard": "Camera Connector",
+      "sourceName": "default",
+      "description": "Camera Connector",
+      "evidence": [
+        "default_port_set"
+      ]
+    },
+    {
+      "id": "expansionHeader40Pin",
+      "type": "ExpansionHeader40Pin",
+      "standard": "40-Pin Expansion Header",
+      "sourceName": "default",
+      "description": "40-Pin Expansion Header",
+      "evidence": [
+        "default_port_set"
+      ]
+    },
+    {
+      "id": "buttonHeader",
+      "type": "ButtonHeader",
+      "standard": "Button Header",
+      "sourceName": "default",
+      "description": "Button Header",
+      "evidence": [
+        "default_port_set"
+      ]
+    },
+    {
+      "id": "canBusHeader",
+      "type": "CanBusHeader",
+      "standard": "Optional CAN Bus Header",
+      "sourceName": "default",
+      "description": "Optional CAN Bus Header",
+      "evidence": [
+        "default_port_set"
+      ]
+    },
+    {
+      "id": "dcPowerJack",
+      "type": "DcPowerJack",
+      "standard": "DC Power Jack",
+      "sourceName": "default",
+      "description": "DC Power Jack",
+      "evidence": [
+        "default_port_set"
+      ]
+    }
+  ],
+  "analysisContext": {
+    "sourceFormat": "stp",
+    "parserMode": "connector_port_name_matching"
+  },
+  "provenance": {
+    "sourceFiles": [
+      "P3766-P3768SKU4-P3767ENVELOPE.stp"
+    ]
+  }
+}

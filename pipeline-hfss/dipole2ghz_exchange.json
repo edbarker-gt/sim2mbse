@@ -2,52 +2,48 @@
   "simulationIdentity": {
     "name": "dipole2ghz",
     "identifier": "SIM_dipole2ghz",
-    "description": "Baseline HFSS exchange representation generated from decimated AEDT JSON.",
-    "sourceFileName": "dipole2ghz.aedt",
-    "sourceFileStem": "dipole2ghz",
-    "projectFormat": "aedt",
-    "created": "Wed Apr 12 22:22:10 2023"
+    "description": "Electromagnetics simulation representation generated from HFSS extractor output."
   },
   "solver": {
     "name": "HFSS",
-    "family": "Electromagnetics",
-    "product": "ElectronicsDesktopStudent",
-    "designCount": 0
+    "version": "ElectronicsDesktopStudent",
+    "method": "FEM"
   },
-  "files": {
-    "inputProjects": [
-      {
-        "path": "dipole2ghz.aedt",
-        "role": "primary_input_project"
-      }
-    ],
-    "outputFiles": []
+  "geometry": {
+    "entities": []
   },
-  "designs": [],
+  "mesh": {},
   "materials": [
     {
-      "name": "air"
+      "id": "air",
+      "type": "dielectric",
+      "properties": {}
     },
     {
-      "name": "copper"
+      "id": "copper",
+      "type": "conductor",
+      "properties": {}
     },
     {
-      "name": "vacuum"
+      "id": "vacuum",
+      "type": "dielectric",
+      "properties": {}
     }
   ],
+  "ports": [],
+  "boundaryConditions": [],
+  "solverSettings": {
+    "frequencyRange": {},
+    "convergenceCriteria": {}
+  },
   "results": {
-    "resultSets": []
+    "sParameters": [],
+    "fieldPlots": []
   },
   "provenance": {
     "sourceFiles": [
       "dipole2ghz.aedt"
     ],
-    "sourceFileName": "dipole2ghz.aedt",
-    "sourceFileStem": "dipole2ghz",
-    "tool": {
-      "name": "hfss_exchange_create.py",
-      "version": "1.0"
-    },
-    "timestamp": "2026-04-04T02:42:28+00:00"
+    "timestamp": "2026-04-05T14:18:12+00:00"
   }
 }

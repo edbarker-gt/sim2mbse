@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/step-connector-ports.json",
+  "title": "STEP Connector Port Black-Box Schema",
+  "type": "object",
+  "required": [
+    "systemIdentity",
+    "ports",
+    "provenance"
+  ],
+  "properties": {
+    "systemIdentity": {
+      "type": "object",
+      "required": [
+        "name",
+        "identifier"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "identifier": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "sourceFileName": {
+          "type": "string"
+        }
+      }
+    },
+    "ports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Usb32TypeC",
+              "Usb32TypeAStacked",
+              "Rj45Ethernet",
+              "DisplayPort",
+              "M2KeyE",
+              "M2KeyM4Lane",
+              "M2KeyM2Lane",
+              "CameraConnector",
+              "ExpansionHeader40Pin",
+              "ButtonHeader",
+              "CanBusHeader",
+              "FanConnector",
+              "DcPowerJack",
+              "OtherPort"
+            ]
+          },
+          "standard": {
+            "type": "string"
+          },
+          "sourceName": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "analysisContext": {
+      "type": "object",
+      "properties": {
+        "sourceFormat": {
+          "type": "string"
+        },
+        "parserMode": {
+          "type": "string"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "sourceFiles",
+        "timestamp"
+      ],
+      "properties": {
+        "sourceFiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tool": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

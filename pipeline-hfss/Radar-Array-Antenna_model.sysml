@@ -1,58 +1,63 @@
 package Radar_Array_Antenna {
 
   doc /*
-    Baseline deterministic SysML v2-style model generated from
-    HFSS exchange JSON.
+    Deterministic SysML v2-style model generated from
+    Electromagnetics simulation JSON.
   */
 
   part def SolverContext {
     attribute name : String;
-    attribute family : String;
-    attribute product : String;
-    attribute designCount : Integer;
-  }
-
-  part def DesignSummary {
-    attribute designName : String;
-    attribute solutionType : String;
-    attribute globalMaterialEnvironment : String;
-    attribute portImpedanceGlobal : String;
-    attribute boundaryNames : String;
-    attribute excitationNames : String;
-    attribute setupNames : String;
+    attribute version : String;
+    attribute method : String;
+    attribute frequencyRange : String;
   }
 
   part def MaterialSummary {
-    attribute name : String;
+    attribute id : String;
+    attribute type : String;
+    attribute properties : String;
+  }
+
+  part def PortSummary {
+    attribute id : String;
+    attribute type : String;
+    attribute location : String;
+    attribute impedance : String;
+  }
+
+  part def BoundarySummary {
+    attribute id : String;
+    attribute type : String;
+    attribute appliesTo : String;
   }
 
   part def ProvenanceRecord {
     attribute sourceFiles : String;
-    attribute sourceFileName : String;
-    attribute sourceFileStem : String;
     attribute timestamp : String;
   }
 
   part solverContext : SolverContext {
     name = "HFSS";
-    family = "Electromagnetics";
-    product = "HFSS";
-    designCount = 0;
+    version = "HFSS";
+    method = "FEM";
+    frequencyRange = "";
   }
 
   part copper : MaterialSummary {
-    name = "copper";
+    id = "copper";
+    type = "conductor";
+    properties = "";
   }
 
   part vacuum : MaterialSummary {
-    name = "vacuum";
+    id = "vacuum";
+    type = "dielectric";
+    properties = "";
   }
 
   part provenance : ProvenanceRecord {
     sourceFiles = "Radar-Array-Antenna.hfss";
-    sourceFileName = "Radar-Array-Antenna.hfss";
-    sourceFileStem = "Radar-Array-Antenna";
-    timestamp = "2026-04-04T02:45:14+00:00";
+    timestamp = "2026-04-05T14:08:19+00:00";
   }
 
 }

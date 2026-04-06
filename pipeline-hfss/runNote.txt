@@ -1,0 +1,26 @@
+
+
+python hfss_decimator_rewritten.py 			Radar-Array-Antenna.hfss
+python hfss_exchange_create_rewritten.py 		Radar-Array-Antenna_decimated.json
+python hfss_exchange_to_sysml_nonflattened_rewritten.py Radar-Array-Antenna_exchange.json
+python hfss_exchange_to_sysml_flattened_rewritten.py 	Radar-Array-Antenna_exchange.json
+
+
+
+
+python hfss_decimator_rewritten.py 			Yagi_Uda.hfss
+python hfss_exchange_create_rewritten.py 		Yagi_Uda_decimated.json
+python hfss_exchange_to_sysml_nonflattened_rewritten.py Yagi_Uda_exchange.json
+python hfss_exchange_to_sysml_flattened_rewritten.py 	Yagi_Uda_exchange.json
+
+
+
+
+python hfss_decimator_rewritten.py 			dipole2ghz.aedt
+python hfss_exchange_create_rewritten.py 		dipole2ghz_decimated.json
+python hfss_exchange_to_sysml_nonflattened_rewritten.py dipole2ghz_exchange.json
+python hfss_exchange_to_sysml_flattened_rewritten.py 	dipole2ghz_exchange.json
+
+
+
+

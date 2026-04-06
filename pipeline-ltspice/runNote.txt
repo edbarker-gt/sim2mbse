@@ -1,0 +1,5 @@
+
+python ltspice_decimator.py 				Fender-Bassman-Amp-AA864.asc
+python ltspice_exchange_create.py 			Fender-Bassman-Amp-AA864_decimated.json
+python ltspice_exchange_to_sysml_nonflattened.py 	Fender-Bassman-Amp-AA864_exchange.json
+python ltspice_exchange_to_sysml_flattened.py 		Fender-Bassman-Amp-AA864_exchange.json

@@ -2,49 +2,43 @@
   "simulationIdentity": {
     "name": "Yagi_Uda",
     "identifier": "SIM_Yagi_Uda",
-    "description": "Baseline HFSS exchange representation generated from decimated AEDT JSON.",
-    "sourceFileName": "Yagi_Uda.hfss",
-    "sourceFileStem": "Yagi_Uda",
-    "projectFormat": "hfss",
-    "created": "Tue Mar 21 15:28:38 2023"
+    "description": "Electromagnetics simulation representation generated from HFSS extractor output."
   },
   "solver": {
     "name": "HFSS",
-    "family": "Electromagnetics",
-    "product": "HFSS",
-    "designCount": 0
+    "version": "HFSS",
+    "method": "FEM"
   },
-  "files": {
-    "inputProjects": [
-      {
-        "path": "Yagi_Uda.hfss",
-        "role": "primary_input_project"
-      }
-    ],
-    "outputFiles": []
+  "geometry": {
+    "entities": []
   },
-  "designs": [],
+  "mesh": {},
   "materials": [
     {
-      "name": "aluminum"
+      "id": "aluminum",
+      "type": "conductor",
+      "properties": {}
     },
     {
-      "name": "vacuum"
+      "id": "vacuum",
+      "type": "dielectric",
+      "properties": {}
     }
   ],
+  "ports": [],
+  "boundaryConditions": [],
+  "solverSettings": {
+    "frequencyRange": {},
+    "convergenceCriteria": {}
+  },
   "results": {
-    "resultSets": []
+    "sParameters": [],
+    "fieldPlots": []
   },
   "provenance": {
     "sourceFiles": [
       "Yagi_Uda.hfss"
     ],
-    "sourceFileName": "Yagi_Uda.hfss",
-    "sourceFileStem": "Yagi_Uda",
-    "tool": {
-      "name": "hfss_exchange_create.py",
-      "version": "1.0"
-    },
-    "timestamp": "2026-04-04T02:42:28+00:00"
+    "timestamp": "2026-04-05T14:18:07+00:00"
   }
 }

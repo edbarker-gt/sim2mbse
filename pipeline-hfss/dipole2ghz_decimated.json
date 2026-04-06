@@ -1,29 +1,31 @@
 {
-  "projectIdentity": {
-    "sourceFileName": "dipole2ghz.aedt",
-    "sourceFileStem": "dipole2ghz",
-    "projectFormat": "aedt",
-    "created": "Wed Apr 12 22:22:10 2023",
-    "product": "ElectronicsDesktopStudent"
-  },
-  "solverContext": {
+  "solverInfo": {
     "solverName": "HFSS",
-    "product": "ElectronicsDesktopStudent",
-    "designCount": 0
+    "solverVersion": "ElectronicsDesktopStudent",
+    "method": "FEM"
   },
-  "designSummary": {
-    "designNames": [],
-    "designs": []
+  "geometrySummary": {
+    "entityCount": 0,
+    "entityTypes": {}
   },
-  "materialSummary": {
-    "sourceMode": "aedt_attribute_references",
-    "count": 3,
-    "names": [
-      "air",
-      "copper",
-      "vacuum"
-    ]
-  },
+  "meshSummary": {},
+  "materialSummary": [
+    {
+      "name": "air",
+      "type": "dielectric"
+    },
+    {
+      "name": "copper",
+      "type": "conductor"
+    },
+    {
+      "name": "vacuum",
+      "type": "dielectric"
+    }
+  ],
+  "portSummary": [],
+  "boundaryConditionSummary": [],
+  "frequencySetup": {},
   "fileSummary": {
     "inputFiles": [
       "dipole2ghz.aedt"
